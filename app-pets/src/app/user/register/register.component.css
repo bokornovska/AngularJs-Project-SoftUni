@@ -1,0 +1,66 @@
+
+#register-container {
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    background-color: rgb(238,238,238);
+}
+
+#register-content {
+    text-align: center;
+    width: 250px;
+}
+
+#title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+#required {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+#register-content div {
+    margin-top: 15px;
+}
+
+#register-content label {
+    font-weight: bold;
+}
+
+#register-content input {
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 13px;
+    border: 1px solid;
+
+}
+
+a {
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+button {
+    padding: 14px 60px;
+    margin: 25px;
+    border-radius: 50px;
+    background: rgb(206,18,18);
+    color:white;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color:#ec2727 ;
+    outline: none;
+}

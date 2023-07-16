@@ -1,0 +1,47 @@
+<div id="register-container">
+  <div class="section-header">
+    <p> <span>Register</span></p>
+  </div>
+  <!-- <div id="title">Register</div> -->
+  <div id="required">* All fields are required</div>
+  <div id="register-content">
+    <form class="form">
+      <div><label>Email <input type="text" name="email" formControlName="email"></label></div>
+      <div><label>Name <input type="text" name="name" formControlName="name"></label></div>
+
+      <!-- <ng-container>
+        <div>
+          Email is required
+        </div>
+        <div>
+          Email must be in the format of <b>valid@email.model</b>
+        </div>
+      </ng-container> -->
+      <div><label>Password <input type="password" name="password" formControlName="password"></label></div>
+      <!-- <ng-container>
+        <div>
+          Password is required
+        </div>
+        <div>
+          Password must be at least 6 characters long
+        </div>
+      </ng-container> -->
+      <div><label>Repeat password <input type="password" name="repass" formControlName="repass"></label></div>
+      <!-- <ng-container>
+        <div>
+          Please repeat the password
+        </div>
+        <div>
+          Repeat password must be at least 6 characters long
+        </div>
+      </ng-container> -->
+      <!-- <ng-container>
+        <div>
+          Passwords don't match
+        </div>
+      </ng-container> -->
+      <button type="submit">Register</button>
+    </form>
+    <p>Already signed up? Click<a routerLink="/login"> here</a></p>
+  </div>
+</div>
