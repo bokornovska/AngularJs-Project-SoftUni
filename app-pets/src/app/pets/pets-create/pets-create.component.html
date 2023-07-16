@@ -1,1 +1,76 @@
-<p>pets-create works!</p>
+
+<div id="create-container">
+    <div class="section-header">
+      <p> <span>Add Pet</span></p>
+    </div>
+    <!-- <div id="title">Register</div> -->
+    <div id="required">* All fields are required</div>
+    <div id="create-content">
+      <form class="form">
+        <div><label>Name: <input type="text" name="name" formControlName="title"></label></div>
+            <!-- <ng-container>
+                <div>
+                    Book title is required
+                </div>
+            </ng-container> -->
+
+            <div><label>Type: <input type="text" name="type" formControlName="type"></label></div>
+            <!-- <ng-container>
+                <div>
+                    Book author is required
+                </div>
+            </ng-container> -->
+
+            <div><label>Years: <input type="text" name="years" formControlName="years"></label></div>
+            <!-- <ng-container>
+                <div>
+                    Book year of publishing is required
+                </div>
+            </ng-container> -->
+            <!-- <ng-container>
+                <div>
+                    Book year must be bigger than 999.
+                </div>
+                <div>
+                    Book year must be less than .
+                </div>
+            </ng-container> -->
+
+            <div><label>Location: <input type="text" name="location" formControlName="location"></label></div>
+            <!-- <ng-container>
+                <div>
+                    Book author is required
+                </div>
+            </ng-container> -->
+            
+            <div><label>Description: <textarea name="description" formControlName="description"></textarea></label></div>
+            <!-- <ng-container>
+                <div>
+                    Book resume is required
+                </div>
+                <div>
+                    Book resume must be at least 50 characters long
+                </div>
+            </ng-container> -->
+
+            <div><label>Image URL: <input type="text" name="imageUrl" formControlName="imageUrl"></label></div>
+            <!-- <ng-container>
+                <div>
+                    Image URL is required
+                </div>
+                <div>
+                    Image url must start with <b>http://</b> or <b>https://</b> and must ends with <b>.png</b>, <p>.jpeg
+                    </p> or <p>.jpg</p>
+                </div>
+            </ng-container> -->
+        <button type="submit">Add pet</button>
+      </form>
+     
+    </div>
+  </div>
+
+
+
+
+
+

@@ -5,6 +5,7 @@ import { PetsDetailsComponent } from './pets-details/pets-details.component';
 import { PetsCreateComponent } from './pets-create/pets-create.component';
 
 import { PetsEditComponent } from './pets-edit/pets-edit.component';
+import { PetComponent } from './pet/pet.component';
 
 
 
@@ -13,7 +14,8 @@ import { PetsEditComponent } from './pets-edit/pets-edit.component';
     PetsCatalogComponent,
     PetsDetailsComponent,
     PetsCreateComponent,
-    PetsEditComponent
+    PetsEditComponent,
+    PetComponent
   ],
   imports: [
     CommonModule,
