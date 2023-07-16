@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { PetsCatalogComponent } from './pets-catalog/pets-catalog.component';
 import { PetsDetailsComponent } from './pets-details/pets-details.component';
 import { PetsCreateComponent } from './pets-create/pets-create.component';
-import { PetsRoutingModule } from './pets-routing.module';
+
+import { PetsEditComponent } from './pets-edit/pets-edit.component';
 
 
 
@@ -11,11 +12,12 @@ import { PetsRoutingModule } from './pets-routing.module';
   declarations: [
     PetsCatalogComponent,
     PetsDetailsComponent,
-    PetsCreateComponent
+    PetsCreateComponent,
+    PetsEditComponent
   ],
   imports: [
     CommonModule,
-    PetsRoutingModule,
+    
   ]
 })
 export class PetsModule { }
