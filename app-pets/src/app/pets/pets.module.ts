@@ -6,6 +6,7 @@ import { PetsCreateComponent } from './pets-create/pets-create.component';
 
 import { PetsEditComponent } from './pets-edit/pets-edit.component';
 import { PetComponent } from './pet/pet.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,7 +20,9 @@ import { PetComponent } from './pet/pet.component';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     
-  ]
+  ],
+
 })
 export class PetsModule { }
