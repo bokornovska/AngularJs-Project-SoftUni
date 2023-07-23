@@ -249,6 +249,13 @@
       transition-delay: 0 !important;
     }
   }
+
+  .input-invalid {
+    color: red;
+ 
+    padding: 5px 10px;
+    border-radius: 10px;
+}
   
   
   

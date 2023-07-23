@@ -3,10 +3,31 @@
         <p> <span>Login</span></p>
     </div>
     <div id="register-content">
-        <form class="form">
+        <form class="form" [formGroup]="loginFormGroup" (ngSubmit)="onLogin()">
+            <!-- email -->
             <div><label>Email <input type="text" name="email" formControlName="email"></label></div>
 
+            <ng-container *ngIf="loginFormGroup.get('email')?.touched && loginFormGroup.controls['email'].invalid">
+                <div *ngIf="loginFormGroup.get('email')?.errors?.['required']" class="input-invalid">
+                    Email is required
+                </div>
+                <div *ngIf="loginFormGroup.controls['email'].errors?.['pattern']" class="input-invalid">
+                    Email must be in the format of <b>valid@email.model</b>
+                </div>
+            </ng-container>
+
+            <!-- password -->
             <div><label>Password <input type="password" name="password" formControlName="password"></label></div>
+
+            <ng-container *ngIf="loginFormGroup.get('password')?.touched && loginFormGroup.get('password')?.invalid">
+                <div *ngIf="loginFormGroup.get('password')?.errors?.['required']" class="input-invalid">
+                    Password is required
+                </div>
+                <div *ngIf="loginFormGroup.get('password')?.errors?.['minlength']" class="input-invalid">
+                    Password must be at least 6 characters long
+                </div>
+            </ng-container>
+
 
             <button type="submit">Login</button>
         </form>
