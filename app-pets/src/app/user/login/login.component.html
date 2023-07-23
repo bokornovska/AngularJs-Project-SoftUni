@@ -29,7 +29,7 @@
             </ng-container>
 
 
-            <button type="submit">Login</button>
+            <button type="submit" [disabled]="!loginFormGroup.valid">Login</button>
         </form>
         <p>You have not registed yet? Click<a routerLink="/register"> here</a></p>
     </div>
