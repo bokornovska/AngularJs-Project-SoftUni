@@ -7,6 +7,7 @@ import { PetsCreateComponent } from './pets-create/pets-create.component';
 import { PetsEditComponent } from './pets-edit/pets-edit.component';
 import { PetComponent } from './pet/pet.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+
     
   ],
 
