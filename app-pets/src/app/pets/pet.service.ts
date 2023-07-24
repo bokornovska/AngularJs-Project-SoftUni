@@ -5,7 +5,7 @@ import { Pet } from '../models/pet';
 import { environment } from 'src/environments/environment.development';
 
 
-const BASE_URL = 'https://holywaves.backendless.app/api/data/Pets';
+const BASE_URL = 'https://pets-bd31f-default-rtdb.firebaseio.com/pets';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,8 @@ export class PetService {
 
   getAllPets() {
     const { appUrl } = environment;
-    return this.http.get<Pet[]>(`${appUrl}/Pets`);
+    return this.http.get<Pet[]>(`${appUrl}`);
+    
   }
 
   getPet(id:string) {
