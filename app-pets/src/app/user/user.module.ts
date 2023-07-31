@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    // MatSnackBarModule
   ]
 })
 export class UserModule { }

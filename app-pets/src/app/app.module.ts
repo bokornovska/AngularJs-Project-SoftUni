@@ -8,6 +8,9 @@ import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PetComponent } from './pets/pet/pet.component';
 import { PetsModule } from './pets/pets.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { PetsModule } from './pets/pets.module';
     UserModule,
     AppRoutingModule,
     PetsModule,
+    BrowserAnimationsModule,
+    // MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
