@@ -1,11 +1,13 @@
 // import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
+// import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.development';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+// import { environment } from 'src/environments/environment.development';
+
+import { AuthService } from 'src/app/shared/services/auth.service';
+// import { ToastrService } from 'ngx-toastr';
 
 
 // import { ToastrService } from 'ngx-toastr';
@@ -52,63 +54,49 @@ export class RegisterComponent {
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService,
+    // private userService: UserService,
+    private authService: AuthService,
     private router: Router,
     private http: HttpClient,
-    // matSnackBar: MatSnackBarModule
+    // private toastr: ToastrService,
+    
   ) { }
 
-  onRegister() {
 
+
+
+  ngOnInit(): void {
+    localStorage.clear();
+  }
+
+  onRegister() {
     let email = this.registerFormGroup.controls['email'].value;
-    let name = this.registerFormGroup.controls['name'].value;
     let password = this.registerFormGroup.controls['password'].value;
     let repass = this.registerFormGroup.controls['repass'].value;
 
+    try {
+      if (password == repass) {
+        this.authService.register(email!, password!);
 
-    this.http
-      .post(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`,
-        { ...this.registerFormGroup.value, returnSecureToken: true }
-      )
-      .subscribe(
-        (res) => {
-        console.log('response -> ', res)
-        this.registerFormGroup.reset();
         // this.matSnackBar.open("Account created", "OK", {
         //   verticalPosition: "top",
         //   horizontalPosition: "center",
-
+  
         // })
-        console.log('Account created!')
-        this.router.navigate(['/']);
-      },
-      // (error) => {
-      //   let errorMessage = error.error.error.message;
-      //   console.log('Sign up failed! -> ', errorMessage)
-      // }
-      )
+        console.log('Registration successful!')
 
-    // if (password == repass) {
-    //   this.userService.register(email!, name!, password!, repass!).subscribe(() => {
-    //     this.router.navigate(['/login'])
-    //   });
-    // } else {
-    //   throw new Error('Passwords don\'t match')
-    // }
+      } else {
+        throw new Error('Passwords don\'t match')
+      }
+    } catch (err: any) {
+      console.log('Passwords don\'t match', 'Error')
 
+      
 
-    // try {
-    //   if (password == repass) {
-    //     this.userService.register(email!, name!, password!, repass!);
-    //   } else {
-    //     throw new Error('Passwords don\'t match')
-    //   }
-    // } catch (err: any) {
-    //   this.toastr.error('Passwords don\'t match', 'Error')
-    //   this.registerFormGroup.get('password')?.reset();
-    //   this.registerFormGroup.get('repass')?.reset();
-    // }
+      this.registerFormGroup.get('password')?.reset();
+      this.registerFormGroup.get('repass')?.reset();
+    }
 
   }
+
 }
